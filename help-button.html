@@ -1,0 +1,47 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`help-button`
+Help
+
+@demo demo/index.html 
+-->
+
+<dom-module id="help-button">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        position: fixed;
+        font-size: 8em;
+        top: .1em;
+        right: .1em;
+        height: .34em;
+        width: .34em;
+        margin: 0;
+        border-radius: 50%;
+        cursor: help;
+        display: block;
+        z-index: 1;
+      }
+    </style>
+    <i class="glyph-help"></i>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'help-button',
+
+      properties: {
+      },
+      listeners: {
+        'tap': 'handleTap',
+      },
+      handleTap: function() {
+
+        document.getElementById('help-dialog').open();
+      }
+    });
+  </script>
+</dom-module>
